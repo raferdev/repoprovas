@@ -2,13 +2,10 @@
 import {Tests} from "@prisma/client";
 
 export type TestsSchema = Omit<Tests,"id"|"categorie_id">
+export type TestsInsert = Omit<Tests, "id">
 
 export interface TestsPost extends TestsSchema {
-    name:string
-    category:number,
-}
-export type Token = { id:number }
-
-export interface AuthSignUp extends Auth {
-    confirmPassword:string
+    category:string
+    discipline:string
+    teacher:string
 }

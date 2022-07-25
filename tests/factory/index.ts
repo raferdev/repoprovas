@@ -1,7 +1,9 @@
 import User from "./UserFactory.js";
+import Tests from "./TestsFactory.js"
 
 const Factory = {
-    User
+    User,
+    Tests
 };
 
 export default Factory;
