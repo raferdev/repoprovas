@@ -3,7 +3,7 @@ import { NextFunction, Request, Response } from 'express';
 import { Token } from '../../types/Auth/Auth.js';
 import "dotenv/config";
 
-function tokenBearerMd(req:Request, res:Response, next:NextFunction) {
+function TokenBearerMd(req:Request, res:Response, next:NextFunction) {
 
   const { authorization } = req.headers;
    if (!authorization) {
@@ -28,4 +28,4 @@ const token = authorization.split(' ')[1];
  
   }
 
-export default tokenBearerMd;
+export default TokenBearerMd;
