@@ -5,7 +5,8 @@
   "description": "documents management",
   "main": "dist/server.js",
   "scripts": {
-    "build":"npx prisma migrate deploy && tsc",
+    "build":"npx prisma migrate deploy && npx prisma db seed && tsc",
+    "start": "node dist/app.js",
     "test": "dotenv -e .env.test prisma migrate dev && NODE_OPTIONS=--experimental-vm-modules dotenv -e .env.test jest -i",
     "studio": "npx prisma studio",
     "dev": "npx nodemon src/server.ts",
