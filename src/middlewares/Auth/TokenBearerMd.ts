@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { NextFunction, Request, Response } from 'express';
-import { Token } from '../../types/auth.js';
+import { Token } from '../../types/Auth/Auth.js';
 import "dotenv/config";
 
 function tokenBearerMd(req:Request, res:Response, next:NextFunction) {

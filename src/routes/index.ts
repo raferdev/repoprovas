@@ -1,6 +1,6 @@
 import { Request, Response, Router } from "express";
-import SignInRoute from "./auth/SignInRoute.js";
-import SignUpRoute from "./auth/SignUpRoute.js";
+import SignInRoute from "./Auth/SignInRoute.js";
+import SignUpRoute from "./Auth/SignUpRoute.js";
 
 const router = Router();
 

@@ -1,19 +1,23 @@
-import { Auth } from "../../types/auth.js";
+import { Auth, AuthSignUp } from "../../types/Auth/Auth.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import "dotenv/config";
 import Repositories from "../../repositories/index.js";
+import "dotenv/config";
 
-async function create(newUser:Auth) {
-    
-    newUser.password = bcrypt.hashSync(newUser.password, +process.env.SALT_ROUNDS);
+async function create(authSignUp:AuthSignUp) {
+    const newUser = {
+        email :authSignUp.email,
+        password:bcrypt.hashSync(authSignUp.password, +process.env.SALT_ROUNDS)
+    }
 
-    return await Repositories.user.create(newUser)
+    return await Repositories.User.create(newUser)
 }
 
 async function signIn(user:Auth) {
-    const userDb = await Repositories.user.find(user);
-
+    const userDb = await Repositories.User.find(user);
+    if(!userDb.password) {
+        throw {type:"auth_error",message:"Invalid password or email"}
+    }
     const validPassword = bcrypt.compareSync(user.password,userDb.password);
 
     if(!validPassword) {

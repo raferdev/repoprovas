@@ -41,10 +41,11 @@ model Disciplines {
 
 model Categories {
   id Int @id @default(autoincrement())
-  name String @unique
+  name String
   discipline_id Int 
   discipline Disciplines @relation(fields: [discipline_id],references: [id])
   tests Tests[]
+  @@unique([name,discipline_id])
 }
 
 model Tests {
