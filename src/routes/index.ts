@@ -1,6 +1,7 @@
 import { Request, Response, Router } from "express";
 import SignInRoute from "./Auth/SignInRoute.js";
 import SignUpRoute from "./Auth/SignUpRoute.js";
+import TeachersRoute from "./Teachers/TeachersRoute.js";
 import TermsRoute from "./Terms/TermsRoute.js";
 import TestsRoute from "./Tests/TestsRoute.js";
 
@@ -16,5 +17,6 @@ router.use(SignUpRoute);
 
 router.use(TestsRoute);
 router.use(TermsRoute);
+router.use(TeachersRoute);
 
 export default router;
