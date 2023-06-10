@@ -1,22 +1,15 @@
-<p align="center">
-  <a href="https://github.com/rafael-f/projeto18-valex">
-    <img src="./readme.png" alt="readme-logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">
-    Valex
-  </h3>
-</p>
+ <h3 align="center">
+    Repoprovas
+ </h3>
 
 ## About 
-This is a simple API to manage vouchers cards vouchers.
-
+This readme is a fast and little resume. This app was builded to handle requests of users to search by tests.
 ## Usage
 
 ```bash
-$ git clone https://github.com/rafael-f/projeto20-repoprovas
+$ git clone https://github.com/raferdev/repoprovas
 
-$ cd projeto20-repoprovas
+$ cd repoprovas
 
 $ npm install
 
